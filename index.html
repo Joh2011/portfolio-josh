@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Josh Nicholas Sutanto — Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#2f3638; /* dark gray */
+      --accent:#06d6a0; /* mint green */
+      --card:#37403f;
+      --glass: rgba(255,255,255,0.03);
+      --muted:#9aa3a0;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;line-height:1.6;color:#e9f5f0;background:linear-gradient(180deg,#2b2f31 0%, #163f35 55%);}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* NAV */
+    header{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(31,31,31,0.85);backdrop-filter:blur(6px);}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;padding:14px 28px;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--accent);font-weight:600}
+    .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:4px solid white}
+    nav{margin-left:auto}
+    nav a{color:#ddd;margin-left:22px;text-decoration:none;font-weight:600}
+    nav a.active{color:var(--accent)}
+
+    /* HERO */
+    .hero{min-height:520px;display:flex;align-items:center;justify-content:center;padding-top:36px;padding-bottom:36px;text-align:center}
+    .hero-inner{padding:60px 18px}
+    .hero h1{font-size:84px;margin:0;color:#fff;letter-spacing:1px}
+    .hero h2{font-weight:500;color:var(--accent);margin-top:18px;font-size:34px}
+    .btn{display:inline-block;margin-top:28px;background:var(--accent);color:#00221a;padding:14px 26px;border-radius:12px;text-decoration:none;font-weight:700}
+
+    /* Sections */
+    section{padding:80px 0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));border-radius:26px;padding:38px;box-shadow:0 6px 18px rgba(0,0,0,0.45);border:1px solid rgba(0,0,0,0.25)}
+
+    /* About */
+    .about{display:grid;grid-template-columns:360px 1fr;gap:40px;align-items:center}
+    .avatar{width:320px;height:320px;border-radius:50%;overflow:hidden;border:18px solid white;margin:auto;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .about h3{font-size:48px;margin:0;color:#fff}
+    .about p{color:rgba(255,255,255,0.85);font-size:18px}
+    .about p strong{color:#fff}
+
+    /* Experience */
+    .exp-accordion .exp-item{background:transparent;margin-bottom:14px;border-radius:26px;padding:18px 20px}
+    .exp-item h4{color:var(--accent);display:flex;align-items:center;gap:12px;margin:0}
+    .exp-body{padding:14px 6px;color:var(--muted);border-top:1px solid rgba(6,214,160,0.08);margin-top:12px}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .project-hero{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:center;border-radius:18px;padding:20px;border:2px solid rgba(6,214,160,0.25)}
+    .project-hero img{width:100%;height:260px;object-fit:cover;border-radius:12px}
+    .project-hero h3{color:var(--accent);margin-top:0}
+    .project-list{display:flex;gap:10px;margin-top:18px;overflow-x:auto;padding-bottom:8px}
+    .thumb{min-width:180px;height:120px;border-radius:14px;overflow:hidden;background:#fff}
+
+    /* Footer */
+    footer{text-align:center;padding:36px 0;color:rgba(255,255,255,0.85)}
+
+    @media(max-width:900px){
+      .hero h1{font-size:44px}
+      .about{grid-template-columns:1fr;grid-template-rows:auto auto}
+      .avatar{width:220px;height:220px}
+      .project-hero{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand"><img src="assets/profile.jpg" alt="profile"/><span>Josh Nicholas Sutanto</span></div>
+    <nav>
+      <a href="#home" class="active">Tentang Saya</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#projects">Proyek</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-inner container">
+      <h1>Josh Nicholas Sutanto</h1>
+      <h2>Computer Science</h2>
+      <a class="btn" href="#projects">Lihat Proyek</a>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="card about">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <div class="avatar"><img src="assets/profile.jpg" alt="Josh" style="width:100%;height:100%;object-fit:cover"/></div>
+      </div>
+      <div>
+        <h3>Tentang Saya</h3>
+        <p>Saya adalah mahasiswa semester lima Program Studi Computer Science di Universitas Bina Nusantara yang memiliki minat kuat di bidang <strong>database, web development</strong>, dan <strong>data analysis</strong>. Selama perkuliahan, saya telah mempelajari serta menerapkan konsep-konsep pengelolaan basis data, pembuatan aplikasi berbasis web, dan analisis data untuk mendukung pengambilan keputusan. Saya senang mempelajari hal baru, bekerja secara terstruktur, dan berkolaborasi dalam tim untuk menghasilkan solusi yang efisien dan bermanfaat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="container">
+    <h2 style="text-align:center;color:#fff;font-size:56px;margin-bottom:28px">Pengalaman</h2>
+    <div class="card">
+      <div class="exp-accordion">
+        <div class="exp-item">
+          <h4>🎓 Pendidikan</h4>
+          <div class="exp-body">S1 - Computer Science<br/><small style="color:var(--muted)">Bina Nusantara University, Alam Sutera, Tangerang · 2023 - Sekarang</small></div>
+        </div>
+        <div class="exp-item">
+          <h4>👥 Organisasi</h4>
+          <div class="exp-body">Himpunan Teknik Informatika (HIMTI) Binus University<br/><small style="color:var(--muted)">Member · Alam Sutera · 2023 - 2027</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container">
+    <h2 style="text-align:center;color:#fff;font-size:56px;margin-bottom:28px">Proyek</h2>
+    <div class="card projects-grid">
+      <div class="project-hero">
+        <img src="assets/project1.jpg" alt="project cover"/>
+        <div>
+          <h3>Diet-Assistance (Distance)</h3>
+          <p style="color:var(--muted)">Diet Assistance (Distance) adalah aplikasi web berbasis AI yang dapat mengenali makanan dari gambar, menghitung jumlah kalori per 100 gram, dan memberikan rekomendasi diet secara otomatis. Sistem ini dikembangkan menggunakan Flask, TensorFlow/Keras, dan Nutritionix API, serta dilengkapi fitur autentikasi pengguna dan riwayat prediksi.</p>
+          <a class="btn" style="margin-top:18px;display:inline-block" href="https://github.com/Joh2011/diet-assistance">Selengkapnya</a>
+        </div>
+      </div>
+
+      <div class="project-hero">
+        <img src="assets/project2.jpg" alt="project cover"/>
+        <div>
+          <h3>Diabetes-Prediction (DiaPredict)</h3>
+          <p style="color:var(--muted)">Diabetes-Prediction (DiaPredict) adalah aplikasi web berbasis AI yang dapat memprediksi kemungkinan memiliki penyakit diabetes secara otomatis. Sistem ini dikembangkan menggunakan metode Random Forest dan XGBoost.</p>
+          <a class="btn" style="margin-top:18px;display:inline-block" href="https://github.com/Joh2011/diapredict">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="project-hero">
+        <img src="assets/project3.jpg" alt="project cover"/>
+        <div>
+          <h3>Stroke Prediction</h3>
+          <p style="color:var(--muted)">Proyek ini bertujuan untuk membangun model prediksi risiko stroke menggunakan teknik machine learning. Dalam implementasinya, dua algoritma pembelajaran mesin digunakan untuk dibandingkan, yaitu Random Forest dan Naive Bayes.</p>
+          <a class="btn" style="margin-top:18px;display:inline-block" href="https://github.com/Joh2011/stroke-prediction">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="project-hero">
+        <img src="assets/project4.jpg" alt="project cover"/>
+        <div>
+          <h3>Website E-Commerce</h3>
+          <p style="color:var(--muted)">Proyek ini merupakan pengembangan website e-commerce sederhana yang berfungsi sebagai platform untuk menampilkan, mengelola, dan melakukan transaksi produk secara online. Website ini dibuat menggunakan teknologi berbasis web seperti HTML, CSS dan JavaScript.</p>
+          <a class="btn" style="margin-top:18px;display:inline-block" href="https://github.com/Joh2011/HCI">Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="container">
+    <h2 style="text-align:center;color:#fff;font-size:56px;margin-bottom:28px">Skills</h2>
+    <div class="card" style="display:flex;gap:20px;flex-wrap:wrap">
+      <div style="flex:1;min-width:220px"><strong>Database</strong><p style="color:var(--muted)">MySQL</p></div>
+      <div style="flex:1;min-width:220px"><strong>Web Development</strong><p style="color:var(--muted)">HTML, CSS, JavaScript, Python, PHP, Laravel</p></div>
+      <div style="flex:1;min-width:220px"><strong>Data & ML</strong><p style="color:var(--muted)">Pandas, Jupyter Notebook, TensorFlow/Keras</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2 style="text-align:center;color:#fff;font-size:48px;margin-bottom:18px">Kontak</h2>
+    <div class="card" style="text-align:center">
+      <p>Terhubung dengan saya: <a href="https://www.linkedin.com/in/josh-nicholas-sutanto-a840a1303/" style="color:var(--accent);text-decoration:none">LinkedIn</a> • <a href="https://www.instagram.com/joshnicholass/" style="color:var(--accent);text-decoration:none">Instagram</a></p>
+      <p style="color:var(--muted)">Email: <strong>joshnicholas2011@gmail.com</strong></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">© 2025 — Josh Nicholas Sutanto</div>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+      this.classList.add('active');
+      const id=this.getAttribute('href').slice(1);
+      const el=document.getElementById(id);
+      if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
+    })
+  })
+</script>
+
+</body>
+</html>
