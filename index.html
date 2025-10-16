@@ -28,6 +28,45 @@
     nav a{color:#ddd;margin-left:22px;text-decoration:none;font-weight:600}
     nav a.active{color:var(--accent)}
 
+    /* Hamburger */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      justify-content:center;
+      gap:6px;
+      width:28px;
+      height:24px;
+      cursor:pointer;
+    }
+    .hamburger span{
+      display:block;
+      height:3px;
+      width:100%;
+      background:white;
+      border-radius:2px;
+      transition:0.3s;
+    }
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translateY(8px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translateY(-8px)}
+
+    /* Mobile menu */
+    @media(max-width:900px){
+      nav{
+        position:absolute;
+        top:68px;
+        left:0;
+        right:0;
+        flex-direction:column;
+        background:rgba(20,20,20,0.95);
+        text-align:center;
+        max-height:0;
+        overflow:hidden;
+      }
+      nav.show{max-height:300px;padding:12px 0;}
+      .hamburger{display:flex;margin-left:auto;}
+    }
+
     /* HERO */
     .hero{min-height:520px;display:flex;align-items:center;justify-content:center;padding-top:36px;padding-bottom:36px;text-align:center}
     .hero-inner{padding:60px 18px}
@@ -72,10 +111,29 @@
 </head>
 <body>
 
-<header>
+<!-- <header>
   <div class="nav-inner">
     <div class="brand"><img src="assets/profile.jpg" alt="profile"/><span>Josh Nicholas Sutanto</span></div>
     <nav>
+      <a href="#home" class="active">Tentang Saya</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#projects">Proyek</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header> -->
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="assets/profile.jpg" alt="profile"/>
+      <span>Josh Nicholas Sutanto</span>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav">
       <a href="#home" class="active">Tentang Saya</a>
       <a href="#experience">Pengalaman</a>
       <a href="#projects">Proyek</a>
@@ -196,6 +254,14 @@
       if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
     })
   })
+
+  // Hamburger toggle
+  const hamburger=document.getElementById('hamburger');
+  const nav=document.getElementById('nav');
+  hamburger.addEventListener('click',()=>{
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('show');
+  });
 </script>
 
 </body>
